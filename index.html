@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>wojtowicz.dev</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍💻</text></svg>">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+  <div class="cursor"></div>
+  <div class="cursor-follower"></div>
+  <div class="site-container">
+    <header class="header">
+      <div class="container header-container">
+        <div class="header-left">
+          <a href="/" class="logo">wojtowicz.dev</a>
+          <nav class="main-nav">
+            <ul class="nav-list" id="glow-menu">
+              <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+              <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+              <li><a href="#career" class="nav-link" data-section="career">Career</a></li>
+              <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+        <a href="/resume/resume.pdf" target="_blank" class="btn btn-outline">Resume</a>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <section id="about" class="section">
+        <div class="container">
+          <div class="hero-content">
+            <div class="hero-text">
+              <h1 class="hero-title">HS Student &<br> Aspiring Full Stack Developer</h1>
+              <p class="hero-description">
+                Passionate about web and software development with experience in HTML, CSS, JavaScript, Java, PHP, and SQL. Always learning and building new projects to grow my skills.
+              </p>
+            </div>
+            <div class="social-links">
+              <a href="https://github.com/not-mikolaj" target="_blank" class="social-link" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/mikolajwojtowicz/" target="_blank" class="social-link" aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a href="mailto:mikolaj@wojtowicz.dev" class="social-link" aria-label="Email">
+                <i class="fas fa-envelope"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="section">
+        <div class="container">
+          <h2 class="section-title">Projects</h2>
+          <div class="projects-grid">
+            <!-- Projects will be dynamically inserted here by JavaScript -->
+          </div>
+        </div>
+      </section>
+
+      <section id="tech-stack" class="section">
+        <div class="container">
+          <h2 class="section-title">Tech Stack</h2>
+          <div class="tech-grid">
+            <div class="tech-card">
+              <h3 class="tech-category">Frontend</h3>
+              <div class="tech-tags">
+                <span class="tech-tag"><i class="fab fa-html5"></i> HTML</span>
+                <span class="tech-tag"><i class="fab fa-css3-alt"></i> CSS</span>
+                <span class="tech-tag"><i class="fab fa-js"></i> JavaScript</span>
+              </div>
+            </div>
+            <div class="tech-card">
+              <h3 class="tech-category">Backend</h3>
+              <div class="tech-tags">
+                <span class="tech-tag"><i class="fab fa-java"></i> Java</span>
+                <span class="tech-tag"><i class="fab fa-php"></i> PHP</span>
+              </div>
+            </div>
+            <div class="tech-card">
+              <h3 class="tech-category">Database</h3>
+              <div class="tech-tags">
+                <span class="tech-tag"><i class="fas fa-database"></i> SQL</span>
+              </div>
+            </div>
+            <div class="tech-card">
+              <h3 class="tech-category">Tools & Frameworks</h3>
+              <div class="tech-tags">
+                <span class="tech-tag"><i class="fab fa-git-alt"></i> Git</span>
+                <span class="tech-tag"><i class="fas fa-code"></i> VS Code</span>
+                <span class="tech-tag"><i class="fas fa-server"></i> XAMPP</span>
+                <span class="tech-tag"><i class="fas fa-database"></i> MySQL</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="career" class="section">
+        <div class="container">
+          <h2 class="section-title">Career Path</h2>
+          <div class="career-timeline" id="career-timeline">
+            <!-- Career timeline items will be added here by JavaScript -->
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section">
+        <div class="container">
+          <div class="contact-container">
+            <h2 class="section-title">Get in Touch</h2>
+            <div class="contact-form-container">
+              <form id="contact-form" class="contact-form">
+                <div class="form-group">
+                  <label for="name" class="form-label">Name</label>
+                  <input type="text" id="name" name="name" class="form-input" required>
+                </div>
+                <div class="form-group">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" id="email" name="email" class="form-input" required>
+                </div>
+                <div class="form-group">
+                  <label for="message" class="form-label">Message</label>
+                  <textarea id="message" name="message" class="form-textarea" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary submit-btn" id="submit-btn">
+                  <span id="submit-text">Send Message</span>
+                  <span id="submit-spinner" class="spinner" style="display: none;"></span>
+                </button>
+                <p id="form-message" class="form-message"></p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-container">
+        <p class="copyright">© 2025 wojtowicz.dev. All rights reserved.</p>
+        <nav class="footer-nav">
+          <a href="#" class="footer-link">Terms of Service</a>
+          <a href="#" class="footer-link">Privacy</a>
+        </nav>
+      </div>
+    </footer>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
